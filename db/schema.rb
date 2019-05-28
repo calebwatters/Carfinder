@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_181015) do
+ActiveRecord::Schema.define(version: 2019_05_28_183750) do
 
   create_table "car_makes", force: :cascade do |t|
     t.integer "car_post_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_181015) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "make_models", force: :cascade do |t|
