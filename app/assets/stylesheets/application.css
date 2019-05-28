@@ -6,6 +6,9 @@
   padding: 50px;
   margin: 20px;
 } */
+h1 {
+  text-align: center;
+}
 
 .column {
   float: left;
@@ -44,4 +47,22 @@
 .topnav a.active {
   background-color:lightblue;
   color: white;
+}
+
+input {
+    width: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+    }
+
+    textarea {
+    margin: 8px 0;
+  width: 500px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: white;
+  resize: none;
 }
