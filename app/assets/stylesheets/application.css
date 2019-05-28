@@ -1,18 +1,11 @@
-/* .cars {
-     background-color: lightblue;
-  color: white;
-    width: 300px;
-  border: 15px solid lightgrey;
-  padding: 50px;
-  margin: 20px;
-} */
+
 h1 {
   text-align: center;
 }
 
 .column {
   float: left;
-  width: 33.33%;
+  width: 35%;
 }
 
 /* Clear floats after the columns */
@@ -20,6 +13,8 @@ h1 {
   content: "";
   display: table;
   clear: both;
+ 
+
 }
 
 .topnav {
@@ -82,7 +77,7 @@ img {
 
 .show_img img{
     width: 100%;
-    width: 700px; height: 400px;
+    width: 600px; height: 400px;
   border: 15px solid lightgrey;
   padding: 50px;
   margin: 20px; box-shadow: 6px 6px 92px -35px rgba(0,0,0,0.75);
@@ -90,4 +85,18 @@ img {
 
 .show_attr {
     text-align: right;
+}
+
+.index_img img{
+    width: 100%;
+    width: 300px; height: 200px;
+  
+  padding: 25px;
+  margin: 10px; box-shadow: 6px 6px 92px -35px rgba(0,0,0,0.75);
+}
+
+.index_obj {
+    text-align: center;
+    border: 15px solid lightgrey;
+  margin: 20px;
 }
