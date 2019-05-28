@@ -1,0 +1,2 @@
+class CarPostsController < ApplicationController
+end

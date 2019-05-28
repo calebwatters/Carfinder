@@ -1,0 +1,2 @@
+class MakeModelsController < ApplicationController
+end
