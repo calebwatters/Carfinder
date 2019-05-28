@@ -1,22 +1,30 @@
+<div class="topnav">
+  <a  href="../car_posts/">Home</a>
+  <a href="../users/new">Sign In</a>
+  <a href="../car_posts/new">New Listing</a>
+</div>
+
 <h1><%=@car_post.title%></h1>
-
-<p>
-  <strong>Image:</strong>
+<div  class="show_img" >
   <%= image_tag @car_post.photo.thumb.url %>
-</p>
-<p>
-<%=@car_post.content%></p>
-<h3>Make/Model</h3>
-<%@car_post.make_models.each do |m| %>
-    <ul>Make/Model:<%=m.make_model%><br>
-    Year: <%=m.year%><br>
-    Color: <%=m.color%><br>
-    Mileage: <%=m.mileage%><br>
-    Type: <%=m.style%><br>
 
-    </ul>
-<%end%>
+</div>
+<h2>General Info</h2>
+<div class="column">
+    <%=@car_post.content%></p>
+    <h3>Make/Model</h3>
+    <%@car_post.make_models.each do |m| %>
+        <ul>Make/Model:<%=m.make_model%><br>
+        Year: <%=m.year%><br>
+        Color: <%=m.color%><br>
+        Mileage: <%=m.mileage%><br>
+        Type: <%=m.style%><br>
 
+        </ul>
+    <%end%>
+</div>
+
+<div class="column">
 <h3>Reviews: </h3>
 <% @car_post.reviews.each do |comment| %>
     <%= comment.user.name %> says: <%= comment.content %>.<br>
@@ -33,3 +41,4 @@
     <%= f.text_area :content%><br>
     <%= f.submit %>
 <% end %>
+</div>
