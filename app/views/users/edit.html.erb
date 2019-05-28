@@ -1,4 +1,9 @@
 <h1>Edit your account, <%= @user.name %></h1>
+<div class="topnav">
+  <a  href="../car_posts">Home</a>
+  <a class="active" href="new">Sign In</a>
+   <a href="../car_posts/new">New Listing</a>
+</div>
 
 <%= form_for(@user) do |f| %>
     <%= f.label :name %>
@@ -16,7 +21,7 @@
     <%= f.text_field :city %>
 
     <%= f.label :state %>
-    <%= f.select :state, options_for_select(us_states) %><br>
+    <%= f.select :state, options_for_select(us_states.select)%><br>
     <br>
 
     <%= f.label :zipcode %>

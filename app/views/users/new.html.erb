@@ -23,7 +23,7 @@
     <%= f.text_field :city %>
 
     <%= f.label :state %>
-    <%= f.select :state, options_for_select(us_states) %><br>
+    <%= f.select :state, options_for_select(us_states.select) %><br>
     <br>
 
     <%= f.label :zipcode %>
