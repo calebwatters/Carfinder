@@ -1,0 +1,25 @@
+<div class="topnav">
+  <a class="active" href="<%link_to car_posts_path%>">Home</a>
+  <a href="<%=link_to new_user_path%>">Sign In</a>
+</div>
+
+
+<%@car_posts.each do |cp|%>
+<div class="column">
+<%= link_to car_post_path(cp) do %>
+
+<div style=" width: 300px;
+  border: 15px solid lightgrey;
+  padding: 50px;
+  margin: 20px; box-shadow: 6px 6px 92px -35px rgba(0,0,0,0.75);" class="row">
+
+<p>
+
+<h1><%=cp.title%></h1>
+  <center><%=image_tag cp.photo.thumb.url %></center>
+
+</p>
+</div>
+</div>
+<% end %>
+<%end%>

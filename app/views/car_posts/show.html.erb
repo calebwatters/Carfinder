@@ -1,0 +1,35 @@
+<h1><%=@car_post.title%></h1>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @car_post.photo.thumb.url %>
+</p>
+<p>
+<%=@car_post.content%></p>
+<h3>Make/Model</h3>
+<%@car_post.make_models.each do |m| %>
+    <ul>Make/Model:<%=m.make_model%><br>
+    Year: <%=m.year%><br>
+    Color: <%=m.color%><br>
+    Mileage: <%=m.mileage%><br>
+    Type: <%=m.style%><br>
+
+    </ul>
+<%end%>
+
+<h3>Reviews: </h3>
+<% @car_post.reviews.each do |comment| %>
+    <%= comment.user.name %> says: <%= comment.content %>.<br>
+<% end %>
+<h3>Unique Commenters: </h3>
+<% @car_post.users.uniq.each do |user| %>
+    <%= link_to user.name, user_path(user) %><br>
+<% end %><br>
+
+<%= form_for @car_post.reviews.build do |f| %>
+    <%= f.hidden_field :car_post_id %>
+
+    <%= f.label :content, "Leave A Review:" %><br>
+    <%= f.text_area :content%><br>
+    <%= f.submit %>
+<% end %>
