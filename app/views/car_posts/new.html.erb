@@ -1,15 +1,22 @@
 <div class="topnav">
-   <a style="font-family: impact;"> CarFinder</a>
-  <a  href="../car_posts/">Home</a>
-
-  <a class="active" href="../car_posts/new">New Listing</a>
-      <%if current_user != nil%>
-<a><%=link_to current_user.name, user_path(current_user)%></a>
-  <%else%>
-  <a><%=link_to "Login", login_path%>
-  <%end%>
-
+      <a style="font-family: impact;"> CarFinder</a>
+    <a  href="../car_posts">Home</a>
+    <a href="../car_posts/new">New Listing</a>
+    <%if logged_in? %>
+        <div class="dropdown">
+            <button class="dropbtn"><%=link_to current_user.name.titleize, user_path(current_user)%>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <%= link_to "Log Out", logout_path, method: :delete %>
+            </div>
+        </div>
+    <%else%>
+        <a><%=link_to "Login", login_path%></a>
+    <%end%>
+  </div>
 </div>
+
 <br>
 <br>
 <br>
