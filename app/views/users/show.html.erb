@@ -1,8 +1,12 @@
 <div class="topnav">
+    <a> CarFinder</a>
   <a  href="../car_posts">Home</a>
-  <a class="active" href="new">Sign In</a>
-   <a href="../car_posts/new">New Listing</a>
-     <a><%=current_user.name%></a>
+  <a href="../car_posts/new">New Listing</a>
+  <%if current_user != nil%>
+  <a><%=link_to current_user.name, user_path(current_user)%></a>
+  <%else%>
+  <a class="active"><%=link_to "Login", login_path%>
+  <%end%>
 </div>
 <%# 
 <h1>Welcome, <%= @user.name %></h1>
@@ -24,6 +28,31 @@
                 <%# <%= gravatar_for @user %> 
                 <%= @user.name %>
             </h1>
+<br>
+<br>
+<br>
+<h2>Cars For Sale</h2>
+            <%@user.car_posts.each do |cp|%>
+            <h2><%=cp.title%></h2>
+<div  class="show_img" >
+  <%= image_tag cp.photo.thumb.url %>
+
+</div>
+<h2>General Info</h2>
+<div class="column">
+    <%=cp.content%></p>
+    <h3>Make/Model</h3>
+    <%cp.make_models.each do |m| %>
+        <ul>Make/Model:<%=m.make_model%><br>
+        Year: <%=m.year%><br>
+        Color: <%=m.color%><br>
+        Mileage: <%=m.mileage%><br>
+        Type: <%=m.style%><br>
+
+        </ul>
+    <%end%>
+</div>
+            <%end%>
         </section>
     </aside>
 </div>

@@ -3,6 +3,7 @@ class CarPost < ApplicationRecord
     has_many :make_models, through: :car_makes
     has_many :reviews
     has_many :users, through: :reviews
+    belongs_to :user
     accepts_nested_attributes_for :make_models
     mount_uploader :photo, PhotoUploader
     validates_processing_of :photo

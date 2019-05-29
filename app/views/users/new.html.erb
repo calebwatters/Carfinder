@@ -3,7 +3,11 @@
   <a  href="../car_posts">Home</a>
   <a class="active" href="new">Sign In</a>
    <a href="../car_posts/new">New Listing</a>
-     <a><%=current_user.name%></a>
+        <%if current_user != nil%>
+  <a><%=current_user.name%></a>
+  <%else%>
+  <a><%=link_to "Login", login_path%>
+  <%end%>
 </div>
 
 

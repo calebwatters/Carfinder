@@ -10,8 +10,7 @@ class CarPostsController < ApplicationController
     end
 
     def create
-        # byebug
-        @car_post = CarPost.new(car_post_params)
+        @car_post = current_user.car_posts.build(car_post_params)
         if @car_post.save
             redirect_to @car_post
         else
@@ -28,7 +27,7 @@ class CarPostsController < ApplicationController
     private
 
     def car_post_params
-        params.require(:car_post).permit(:title, :content, :photo,  make_models_attributes: [:make_model, :color, :style, :mileage, :year])
+        params.require(:car_post).permit(:title, :content, :photo, :user_id,  make_models_attributes: [:make_model, :color, :style, :mileage, :year])
     end
 
     def set_car

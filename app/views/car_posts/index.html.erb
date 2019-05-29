@@ -1,9 +1,12 @@
 <div class="topnav">
     <a> CarFinder</a>
   <a class="active" href="">Home</a>
-  <a href="../users/new">Sign In</a>
   <a href="../car_posts/new">New Listing</a>
-  <a><%=current_user.name%></a>
+  <%if current_user != nil%>
+  <a><%=link_to current_user.name, user_path(current_user)%></a>
+  <%else%>
+  <a><%=link_to "Login", login_path%>
+  <%end%>
 </div>
 <br> <br> <br>
 

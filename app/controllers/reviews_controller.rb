@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
         @review = current_user.reviews.build(review_params)
         if @review.valid?
             @review.save
+            redirect_to car_post_path(@review.car_post_id)
         end
     end
 
