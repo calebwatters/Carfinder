@@ -10,12 +10,18 @@ class CarPost < ApplicationRecord
     validate :photo_size_validation
 
 
-    # def make_models_attributes=(make_model_attributes)
-    #     make_model_attributes.values.each do |make_model_attribute|
-    #         make_model = MakeModel.find_or_create_by(make_model_attribute)
-    #         self.car_post_make_models.build(make_model: make_model)
-    #     end
-    # end
+     def self.search(search)
+        if search
+            attr = CarPost.find_by("title LIKE ?", "%#{search}%")
+            if attr
+                self.where(id: attr )
+            else 
+                CarPost.all
+            end
+        else
+            CarPost.all
+        end
+    end
  
     private
     def photo_size_validation

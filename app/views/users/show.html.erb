@@ -33,26 +33,22 @@
 <br>
 <h2>Cars For Sale</h2>
             <%@user.car_posts.each do |cp|%>
-            <h2><%=cp.title%></h2>
-<div  class="show_img" >
-  <%= image_tag cp.photo.thumb.url %>
 
-</div>
-<h2>General Info</h2>
-<div class="column">
-    <%=cp.content%></p>
-    <h3>Make/Model</h3>
-    <%cp.make_models.each do |m| %>
-        <ul>Make/Model:<%=m.make_model%><br>
-        Year: <%=m.year%><br>
-        Color: <%=m.color%><br>
-        Mileage: <%=m.mileage%><br>
-        Type: <%=m.style%><br>
+<div class="column index_obj" >
+        <%= link_to car_post_path(cp) do %>
 
-        </ul>
-    <%end%>
+    <div class="index_img row">
+
+    <p>
+
+    <h1><%=cp.title%></h1>
+    <center><%=image_tag cp.photo.thumb.url %></center>
+
+    </p>
+    </div>
 </div>
-            <%end%>
+<% end %>
+<%end%>
         </section>
     </aside>
 </div>
