@@ -1,9 +1,16 @@
 <div class="topnav">
- <a>CarFinder</a>
-  <a  href="../car_posts">Home</a>
-  <a class="active" href="new">Sign In</a>
-   <a href="../car_posts/new">New Listing</a>
-     <a><%=current_user.name%></a>
+    <a> CarFinder</a>
+    <a  href="../car_posts">Home</a>
+    <a href="../car_posts/new">New Listing</a>
+        <div class="dropdown">
+            <button class="dropbtn"><%=link_to current_user.name.titleize, user_path(current_user)%>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <%= link_to "Log Out", logout_path, method: :delete %>
+            </div>
+        </div>
+  </div>
 </div>
 
 
