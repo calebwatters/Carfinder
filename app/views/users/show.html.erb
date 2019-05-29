@@ -1,10 +1,28 @@
+<%# <div class="topnav">
+  <a  href="../car_posts">Home</a>
+  <a class="active" href="new">Sign In</a>
+   <a href="../car_posts/new">New Listing</a>
+</div> %>
+<%# 
 <h1>Welcome, <%= @user.name %>!</h1>
-
+<%# 
 <label><b>Email Address:</b></label>
     <%= @user.email %>
-    <br>
-    <br>
-
+    <%# <br>
+    <br> %>
+<%# 
 <label><b>Address:</b></label>
-    <%= @user.street_address.titleize %> <%= @user.city %> <%= @user.state %>, <%= @user.zipcode%>
+    <%= @user.street_address.titleize %> <%= @user.city %> <%= @user.state %>, <%= @user.zipcode %> %> %> %>
 
+
+<% provide(:title, @user.name) %>
+<div class="row">
+    <aside class="col-md-4">
+        <section class="user_info">
+            <h1>    
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+            </h1>
+        </section>
+    </aside>
+</div>

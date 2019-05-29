@@ -1,32 +1,32 @@
-<h1>Edit your account, <%= @user.name %></h1>
 <div class="topnav">
   <a  href="../car_posts">Home</a>
   <a class="active" href="new">Sign In</a>
    <a href="../car_posts/new">New Listing</a>
 </div>
 
-<%= form_for(@user) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <br>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %><br>
-    <br>
+<% provide(:title, 'Edit') %>
+<h1>Sign Up</h1>
 
-    <%= f.label :street_address %>
-    <%= f.text_field :street_address %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: edit_user_path) do |f| %>
 
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+      <br>
 
-    <%= f.label :state %>
-    <%= f.select :state, options_for_select(us_states.select)%><br>
-    <br>
+      <%= f.label :email %>
+      <%= f.email_field :email %><br>
+      <br>
 
-    <%= f.label :zipcode %>
-    <%= f.text_field :zipcode %><br>
-    <br>
+      <%= f.label :password %>
+      <%= f.password_field :street_address %><br><br>
 
-    <%= f.submit %>
-<% end %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %><br><br>
+
+      <%= f.submit "Edit My Account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
