@@ -10,7 +10,6 @@ class CarPost < ApplicationRecord
     validate :photo_size_validation
     validates :title, presence: true
     validates :content, presence: true
-    validates :photo, presence: true
 
 
 
@@ -18,7 +17,7 @@ class CarPost < ApplicationRecord
         if search
             attr = CarPost.where("title LIKE ?", "%#{search}%")
             if attr
-                self.where(id: attr )
+                self.where(id: attr)
             else 
                 CarPost.all
             end
