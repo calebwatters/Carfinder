@@ -3,11 +3,17 @@
     <a  href="../car_posts">Home</a>
     <a href="../car_posts/new">New Listing</a>
     <%if logged_in? %>
-        <a><%=link_to current_user.name, user_path(current_user)%></a>
+        <div class="dropdown">
+            <button class="dropbtn"><%=link_to current_user.name.titleize, user_path(current_user)%>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <%= link_to "Log Out", logout_path, method: :delete %>
+            </div>
+        </div>
     <%else%>
-        <a class="active"><%=link_to "Login", login_path%>
+        <a><%=link_to "Login", login_path%></a>
     <%end%>
-        <%= link_to "Log Out", logout_path, method: :delete %>
   </div>
 </div>
 
