@@ -1,5 +1,5 @@
 <div class="topnav">
- <a>CarFinder</a>
+   <a style="font-family: impact;"> CarFinder</a>
   <a  href="../car_posts/">Home</a>
 
   <a href="../car_posts/new">New Listing</a>
@@ -36,10 +36,7 @@
 <% @car_post.reviews.each do |comment| %>
     <%= comment.user.name %> says: <%= comment.content %>.<br>
 <% end %>
-<h3>Unique Commenters: </h3>
-<% @car_post.users.uniq.each do |user| %>
-    <%= link_to user.name, user_path(user) %><br>
-<% end %><br>
+
 
 <%= form_for @car_post.reviews.build do |f| %>
     <%= f.hidden_field :car_post_id %>
