@@ -1,24 +1,15 @@
 <div class="topnav">
     <a> CarFinder</a>
-  <a  href="../car_posts">Home</a>
-  <a href="../car_posts/new">New Listing</a>
-  <%if current_user != nil%>
-  <a><%=link_to current_user.name, user_path(current_user)%></a>
-  <%else%>
-  <a class="active"><%=link_to "Login", login_path%>
-  <%end%>
+    <a  href="../car_posts">Home</a>
+    <a href="../car_posts/new">New Listing</a>
+    <%if logged_in? %>
+        <a><%=link_to current_user.name, user_path(current_user)%></a>
+    <%else%>
+        <a class="active"><%=link_to "Login", login_path%>
+    <%end%>
+    <a><%= link_to "Log Out", logout_path, method: :delete %></a>
+  </div>
 </div>
-<%# 
-<h1>Welcome, <%= @user.name %></h1>
-<%# 
-<label><b>Email Address:</b></label>
-    <%= @user.email %>
-    <%# <br>
-    <br> %>
-<%# 
-<label><b>Address:</b></label>
-    <%= @user.street_address.titleize %> <%= @user.city %> <%= @user.state %> <%= @user.zipcode %>
-
 
 <% provide(:title, @user.name) %>
 <div class="row">
