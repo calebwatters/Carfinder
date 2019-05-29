@@ -13,7 +13,7 @@
 <br>
 <br>
 <br>
-
+<div class="car-form">
 <%=form_for @car_post do |f|%>
 <%=f.label :title%><br>
 <%=f.text_field :title%><br>
@@ -35,8 +35,9 @@
 
   <%=f.fields_for :make_models, @car_post.make_models.build do |mf|%>
     <%# <%=mf.text_field :make_model%><br>
-    <%=mf.collection_select :make_model, MakeModel.select(:make_model).distinct, :make_model, :make_model, {:include_blank => "Please select"}%><br>
 
+    <%=mf.collection_select :make_model, MakeModel.select(:make_model).distinct, :make_model, :make_model, {:include_blank => "Please select"}%><br>
+  
 <br>
 
   <%=mf.label :year, "Year"%><br>
@@ -60,3 +61,4 @@
 
 
 <%end%>
+</div>

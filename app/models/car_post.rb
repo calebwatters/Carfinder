@@ -8,6 +8,10 @@ class CarPost < ApplicationRecord
     mount_uploader :photo, PhotoUploader
     validates_processing_of :photo
     validate :photo_size_validation
+    validates :title, presence: true
+    validates :content, presence: true
+    validates :photo, presence: true
+
 
 
      def self.search(search)

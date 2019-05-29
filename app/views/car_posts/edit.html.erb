@@ -1,0 +1,65 @@
+<div class="topnav">
+ <a>CarFinder</a>
+  <a  href="../car_posts/">Home</a>
+
+  <a class="active" href="../car_posts/new">New Listing</a>
+      <%if current_user != nil%>
+<a><%=link_to current_user.name, user_path(current_user)%></a>
+  <%else%>
+  <a><%=link_to "Login", login_path%>
+  <%end%>
+
+</div>
+<br>
+<br>
+<br>
+
+
+<div class="car-form">
+<%=form_for @car_post do |f|%>
+<%=f.label :title%><br>
+<%=f.text_field :title%><br>
+<%=f.label :content%><br>
+<%=f.text_area :content%><br>
+
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
+    <% if f.object.photo? %>
+      <%= image_tag f.object.photo.thumb.url %>
+      <%= f.label :remove_photo %>
+      <%= f.check_box :remove_photo %> 
+    <% end %>
+  </div><br><br>
+
+  <%=f.label :make_model, "Make/Model"%><br>
+
+
+  <%=f.fields_for :make_models, @car_post.make_models.build do |mf|%>
+    <%# <%=mf.text_field :make_model%><br>
+    <%=mf.collection_select :make_model, MakeModel.select(:make_model).distinct, :make_model, :make_model, {:include_blank => "Please select"}%><br>
+
+<br>
+
+  <%=mf.label :year, "Year"%><br>
+  <%=mf.text_field :year%><br><br>
+
+ <%=mf.label :color, "Color"%><br><br>
+  <%=mf.collection_select :color, MakeModel.select(:color).distinct, :color, :color, {:include_blank => "Please select"}%><br><br>
+
+
+  <%=mf.label :style, "Type"%><br><br>
+  <%=mf.collection_select :style, MakeModel.select(:style).distinct, :style, :style,  {:include_blank => "Please select"} %><br><br>
+
+
+
+ <%=mf.label :mileage, "Mileage"%><br>
+  <%=mf.text_field :mileage%><br>
+<%end%>
+
+
+<%=f.submit%>
+
+
+<%end%>
+</div>
