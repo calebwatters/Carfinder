@@ -8,11 +8,15 @@ class CarPost < ApplicationRecord
     mount_uploader :photo, PhotoUploader
     validates_processing_of :photo
     validate :photo_size_validation
+    validates :title, presence: true
+    validates :content, presence: true
+    validates :photo, presence: true
+
 
 
      def self.search(search)
         if search
-            attr = CarPost.find_by("title LIKE ?", "%#{search}%")
+            attr = CarPost.where("title LIKE ?", "%#{search}%")
             if attr
                 self.where(id: attr )
             else 
