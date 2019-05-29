@@ -1,6 +1,6 @@
 <div class="topnav">
     <a> CarFinder</a>
-  <a class="active" href="">Home</a>
+  <a class="active" href="../car_posts">Home</a>
   <a href="../car_posts/new">New Listing</a>
   <%if current_user != nil%>
   <a><%=link_to current_user.name, user_path(current_user)%></a>
@@ -11,8 +11,8 @@
 <br>
 <div class="hero-image">
   <div class="hero-text">
-    <h1>CarFinder</h1>
-    <p>Welcome</p>
+    <font size='15'>CarFinder</font>
+    <h2>Welcome<h2>
     <%= form_tag(car_posts_path, method: :get) do %>
   <%= text_field_tag(:search, params[:search]) %>
   <%= submit_tag ('Search'), name: nil %>
