@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_200835) do
+ActiveRecord::Schema.define(version: 2019_05_29_171607) do
 
   create_table "car_makes", force: :cascade do |t|
     t.integer "car_post_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_200835) do
     t.string "zipcode"
     t.string "state"
     t.string "city"
+    t.string "password_digest"
   end
 
 end
