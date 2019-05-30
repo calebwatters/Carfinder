@@ -30,11 +30,6 @@
   <div class="field">
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
-    <% if f.object.photo? %>
-      <%= image_tag f.object.photo.thumb.url %>
-      <%= f.label :remove_photo %>
-      <%= f.check_box :remove_photo %> 
-    <% end %>
   </div><br><br>
 
   <%=f.label :make_model, "Make/Model"%><br>
