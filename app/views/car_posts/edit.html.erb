@@ -9,8 +9,8 @@
             </button>
             <div class="dropdown-content">
                 <%= link_to "Profile", user_path(current_user) %>
-                <%= link_to "Log Out", logout_path, method: :delete %>
                 <%= link_to "Settings", edit_user_path(current_user) %>
+                <%= link_to "Log Out", logout_path, method: :delete %>
             </div>
         </div>
     <%else%>
@@ -36,9 +36,7 @@
     <%= f.file_field :photo %>
     <% if f.object.photo? %>
       <%= image_tag f.object.photo.thumb.url %>
-      <%= f.label :remove_photo %>
-      <%= f.check_box :remove_photo %> 
-    <% end %>
+  <%end%>
   </div><br><br>
 
   <%=f.label :make_model, "Make/Model"%><br>

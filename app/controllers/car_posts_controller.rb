@@ -24,6 +24,12 @@ class CarPostsController < ApplicationController
     end
 
     def update
+        @car_post.make_models.destroy_all
+           if @car_post.update(car_post_params)
+            redirect_to @car_post
+        else
+            render :edit
+        end
     end
 
     def destroy

@@ -7,8 +7,8 @@
         <button class="dropbtn"><a><%= current_user.name.titleize %></a></button>
             <div class="dropdown-content">
                 <%= link_to "Profile", user_path(current_user) %>
-                <%= link_to "Log Out", logout_path, method: :delete %>
                 <%= link_to "Settings", edit_user_path(current_user) %>
+                <%= link_to "Log Out", logout_path, method: :delete %>
             </div>
         </nav>
     <%else%>
@@ -44,6 +44,11 @@
 
     </p>
     </div>
+    <%= link_to edit_car_post_path(cp) do %>
+    <div class="edit">
+        Edit
+</div>
+<%end%>
 </div>
 <% end %>
 <%end%>
