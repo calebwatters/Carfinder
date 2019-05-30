@@ -34,4 +34,6 @@ Some example project ideas from previous classes:
 - start styling/ cleaning up issues. 
 - issue cleanup and final demos. 
 
+## INSTALL IMAGEMAGIC
+
 
