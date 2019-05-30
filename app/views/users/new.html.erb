@@ -3,10 +3,10 @@
    <a style="font-family: impact;"> CarFinder</a>
     <%=link_to "Home", car_posts_path%>
     <%=link_to "New Listing", new_car_post_path%>
-        <%if current_user != nil%>
-  <%=link_to current_user.name, user_path(current_user)%>
-  <%else%>
-  <%=link_to "Login", login_path%>
+    <%if current_user != nil%>
+      <%=link_to current_user.name, user_path(current_user)%>
+    <%else%>
+    <%=link_to "Login", login_path%>
   <%end%>
 </div>
 
