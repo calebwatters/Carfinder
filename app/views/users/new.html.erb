@@ -10,6 +10,9 @@
   <%end%>
 </div>
 
+<%if flash[:danger] != nil%>
+<%= render 'error'%>
+<%end%>
 
 
 <% provide(:title, 'Sign up') %>

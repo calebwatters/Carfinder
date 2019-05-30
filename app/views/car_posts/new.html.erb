@@ -18,7 +18,11 @@
     <%end%>
   </div>
 </div>
-<div class="error"><a><%= @error%></a>
+
+<%if flash[:danger] != nil%>
+<%= render 'error'%>
+<%end%>
+
 </div>
 <br>
 <br>

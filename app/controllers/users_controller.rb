@@ -14,6 +14,7 @@ class UsersController < ApplicationController
             log_in @user
             redirect_to user_path(@user)
         else
+            flash.now[:danger] = "Please fill in all fields"
             render :new
         end
     end

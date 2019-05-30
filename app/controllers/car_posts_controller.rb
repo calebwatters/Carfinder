@@ -6,21 +6,25 @@ class CarPostsController < ApplicationController
     end
 
     def new
-        if logged_in?
-            @error = "Create A New Listing"
-        else
-            @error = "You cannot create a new listing without a profile"
+        if logged_in? != true
+            flash.now[:danger] = "You must have a profile to create a new listing"
         end
         @car_post = CarPost.new
     end
 
     def create
+        if logged_in?
         @car_post = current_user.car_posts.build(car_post_params)
         if @car_post.save
             redirect_to @car_post
         else
+            flash.now[:danger] = "Please fill in all fields"
             render :new
         end
+        else 
+            redirect_to new_car_post_path
+        end
+
     end
 
     def update

@@ -10,7 +10,7 @@ class CarPost < ApplicationRecord
     validate :photo_size_validation
     validates :title, presence: true
     validates :content, presence: true
-
+    validates :photo, presence: true
 
 
      def self.search(search)
