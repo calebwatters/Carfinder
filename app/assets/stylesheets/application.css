@@ -158,11 +158,11 @@ img {
 }
 
 
-input, textarea, select, .uneditable-input {
+/* input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-}
+} */
 
 input {
   height: auto !important;
@@ -236,7 +236,7 @@ body, html {
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto 25px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -376,7 +376,7 @@ body, html {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 100%;
+  width: 75%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
@@ -388,7 +388,7 @@ body, html {
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
-  width: 100%;
+  width: 75%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -415,7 +415,7 @@ body, html {
 
 .car-form textarea {
     margin: 8px 0;
-  width: 100%;
+  width: 75%;
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -424,9 +424,8 @@ body, html {
   resize: none;
 }
 
-.custom-select {
-  position: relative;
-  font-family: Arial;
+select {
+  text-align: left;
 }
 
 .custom-select select {
@@ -613,3 +612,12 @@ th, td {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+.alert {
+  text-align: center;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  margin-top: 10px;
+}
+

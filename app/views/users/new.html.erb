@@ -1,14 +1,15 @@
+<body class='signup-body'>
 <div class="topnav">
    <a style="font-family: impact;"> CarFinder</a>
     <%=link_to "Home", car_posts_path%>
-  <a class="active" href="new">Sign In</a>
     <%=link_to "New Listing", new_car_post_path%>
         <%if current_user != nil%>
-  <a><%=link_to current_user.name, user_path(current_user)%></a>
+  <%=link_to current_user.name, user_path(current_user)%>
   <%else%>
-  <a><%=link_to "Login", login_path%>
+  <%=link_to "Login", login_path%>
   <%end%>
 </div>
+
 
 
 <% provide(:title, 'Sign up') %>
@@ -33,3 +34,4 @@
     <% end %>
   </div>
 </div>
+</body>

@@ -5,6 +5,10 @@
  <a class="active">Login</a>
 </div>
 
+<%if flash[:danger] != nil%>
+<%= render 'error'%>
+<%end%>
+
 
 <body class="login-body">
 <div class="login-page">
