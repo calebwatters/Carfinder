@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'car_posts#index'
   get 'sessions/new'
   resources :users
   resources :make_models
