@@ -6,6 +6,11 @@ class CarPostsController < ApplicationController
     end
 
     def new
+        if logged_in?
+            @error = "Create A New Listing"
+        else
+            @error = "You cannot create a new listing without a profile"
+        end
         @car_post = CarPost.new
     end
 

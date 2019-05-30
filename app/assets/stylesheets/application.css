@@ -345,6 +345,10 @@ body, html {
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7cb89e600c5e77a8e5786112039733d2f5f16324
 }
 
 #session_remember_me {
@@ -569,3 +573,32 @@ th, td {
   width: 50px;
 }
 
+.error {
+  z-index: 2;
+  background: rgba(88, 164, 214, 0.74);
+  max-width: 1000px;
+  height: 10px;
+  margin: 10px auto 0px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.error a{
+  font-family: arial;
+  color: white;
+}
+
+.user-info {
+   margin: 10px auto 0px;
+  padding: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.user-cars {
+  min-width: 95.8%;
+  display: inline-block;
+   margin: 10px auto 0px;
+  padding: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}

@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   get '/', to: 'car_posts#index'
   get 'sessions/new'
   resources :users
-  resources :make_models
-  resources :car_makes
   resources :car_posts
-  resources :reviews
+  resources :reviews, only: [:create]
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

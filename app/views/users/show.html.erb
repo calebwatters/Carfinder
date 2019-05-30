@@ -19,18 +19,20 @@
   </div>
 </div>
 
-<% provide(:title, @user.name) %>
-<div class="row">
-    <aside class="col-md-4">
-        <section class="user_info">
-            <h1>    
-                <%# <%= gravatar_for @user %> 
-                <%= @user.name %>
-            </h1>
+
+<div class="user-info">
+
+
+<h2><%= @user.name %></h2>
+ <ul> 
+                <li>Email: <%= @user.email %></li></ul>
 <br>
 <br>
 <br>
-<h2>Cars For Sale</h2>
+
+</div>
+<div class='user-cars'>
+<h2>Cars For Sale: </h2>
             <%@user.car_posts.each do |cp|%>
 
 <div class="column index_obj" >
@@ -50,4 +52,6 @@
 <%end%>
         </section>
     </aside>
+</div>
+
 </div>
