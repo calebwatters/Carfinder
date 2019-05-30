@@ -59,9 +59,12 @@ h1 {
   color: white;
 }
 
+
 /* Dropdown container - needed to position the dropdown content */
 .dropdown {
-  float: left;
+  float: right;
+  
+  
 }
 
 /* Style the dropdown button to fit inside the topnav */
@@ -69,42 +72,43 @@ h1 {
   font-size: 17px; 
   border: none;
   outline: none;
-  color: white;
-  padding: 0px 0px;
+  color: black;
+  padding-right: 50px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+
 }
 
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 80px;
+  background-color: rgb(158, 158, 158);
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  overflow: visible;
 }
 
 /* Style the links inside the dropdown */
 .dropdown-content a {
-  float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
 }
 
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
-  color: black;
+
 }
 
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
 .dropdown:hover .dropdown-content {
   display: block;
+  color: black;
 }
 
 /* END OF NAVBAR */
@@ -345,10 +349,6 @@ body, html {
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
-<<<<<<< HEAD
-=======
-
->>>>>>> 7cb89e600c5e77a8e5786112039733d2f5f16324
 }
 
 #session_remember_me {
@@ -495,11 +495,11 @@ textarea {
 }
 
 .comment {
+  overflow: scroll;
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 1000px;
-  height: 1000px;
+  
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
