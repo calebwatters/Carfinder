@@ -10,7 +10,6 @@ class CarPostsController < ApplicationController
     end
 
     def create
-        byebug
         @car_post = current_user.car_posts.build(car_post_params)
         if @car_post.save
             redirect_to @car_post
