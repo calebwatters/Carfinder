@@ -6,6 +6,7 @@ class CarPost < ApplicationRecord
     belongs_to :user
     accepts_nested_attributes_for :make_models
     mount_uploader :photo, PhotoUploader
+    
     validates_processing_of :photo
     validate :photo_size_validation
     validates :title, presence: true

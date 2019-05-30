@@ -23,28 +23,47 @@
   <%= image_tag @car_post.photo.thumb.url %>
 
 </div>
-<h2>General Info</h2>
-<div class="column">
-    <%=@car_post.content%></p>
-    <h3>Make/Model</h3>
-    <%@car_post.make_models.each do |m| %>
-        <ul>Make/Model:<%=m.make_model%><br>
-        Year: <%=m.year%><br>
-        Color: <%=m.color%><br>
-        Mileage: <%=m.mileage%><br>
-        Type: <%=m.style%><br>
+<div class ="comment">
 
-        </ul>
+<div class="column">
+<h3>General Info:</h3>
+    <%=@car_post.content%></p>
+    <table  style="attr_table">
+        <thead>
+            <th>Make/Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            <th>Mileage</th>
+            <th>Type</th>
+
+        </thead>
+        <tbody>
+    <%@car_post.make_models.each do |m| %>
+        <td><%=m.make_model%></td>
+         <td><%=m.year%></td>
+         <td><%=m.color%></td>
+       <td><%=m.mileage%></td>
+        <td> <%=m.style%></td>
+
+    
     <%end%>
+    </table>
 </div>
 
 <div class="column">
 <h3>Reviews: </h3>
+<table  style=" border: 1px solid;
+  border-radius: 3px;" width="500">
 <% @car_post.reviews.each do |comment| %>
-    <%= comment.user.name %> says: <%= comment.content %>.<br>
+    <thead>
+        <th><%= comment.user.name %></th>
+    </thead>
+    <tbody>
+        <td><%= comment.content %></td>
+    </tbody>
 <% end %>
 
-
+</table>
 <%= form_for @car_post.reviews.build do |f| %>
     <%= f.hidden_field :car_post_id %>
     <%= f.hidden_field :user_id%>
@@ -52,4 +71,5 @@
     <%= f.text_area :content%><br>
     <%= f.submit %>
 <% end %>
+</div>
 </div>
