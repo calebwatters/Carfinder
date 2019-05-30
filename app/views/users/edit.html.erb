@@ -1,25 +1,32 @@
 <div class="topnav">
-       <a style="font-family: impact;"> CarFinder</a>
-    <a  href="../car_posts">Home</a>
-    <a href="../car_posts/new">New Listing</a>
+    <a style="font-family: impact;"> CarFinder</a>
+    <%=link_to "Home", car_posts_path%>
+    <%=link_to "New Listing", new_car_post_path%>
+    <%if logged_in? %>
         <div class="dropdown">
-            <button class="dropbtn"><%=link_to current_user.name.titleize, user_path(current_user)%>
+            <button class="dropbtn"><a><%= current_user.name.titleize %></a>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
+                <%= link_to "Profile", user_path(current_user) %>
                 <%= link_to "Log Out", logout_path, method: :delete %>
+                <%= link_to "Settings", edit_user_path(current_user) %>
             </div>
         </div>
+    <%else%>
+        <a><%=link_to "Login", login_path%></a>
+    <%end%>
+  </div>
   </div>
 </div>
 
 
-<% provide(:title, 'Edit') %>
-<h1>Sign Up</h1>
+<% provide(:title, 'Edit User') %>
+<h1>Update your profile</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: edit_user_path) do |f| %>
+  <div class="form">
+    <%= form_for(@user) do |f| %>
 
       <%= f.label :name %>
       <%= f.text_field :name %><br>
@@ -30,12 +37,12 @@
       <br>
 
       <%= f.label :password %>
-      <%= f.password_field :street_address %><br><br>
+      <%= f.password_field :password %><br><br>
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %><br><br>
 
-      <%= f.submit "Edit My Account", class: "btn btn-primary" %>
+      <%= f.submit "Save Changes", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

@@ -62,7 +62,6 @@ h1 {
 /* Dropdown container - needed to position the dropdown content */
 .dropdown {
   float: left;
-  overflow: hidden;
 }
 
 /* Style the dropdown button to fit inside the topnav */
@@ -346,10 +345,6 @@ body, html {
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
 }
 
 #session_remember_me {

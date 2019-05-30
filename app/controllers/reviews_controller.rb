@@ -7,6 +7,12 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+        @review = current_user.reviews.find(params[:id])
+        @review.destroy
+        redirect_to car_post_path(@review.car_post_id)
+    end
+
     private
 
     def review_params

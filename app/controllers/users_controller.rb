@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     before_action :user_actions, only: [:show, :edit, :update]
+    before_action :logged_in_user, only: [:show, :edit, :update]
 
     def new
         @user = User.new
@@ -18,8 +19,12 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user.update(user_params)
-        redirect_to user_path(@user)
+        @user = User.find(params[:id])
+        if @user.update_attributes(user_params)
+            redirect_to user_path(@user)
+        else
+            render :edit
+        end
     end
 
     private
@@ -30,5 +35,12 @@ class UsersController < ApplicationController
 
     def user_actions
         @user = User.find(params[:id])
+    end
+
+    def logged_in_user
+        unless logged_in?
+            flash[:danger] = "Please Log In!"
+            redirect_to login_url
+        end
     end
 end

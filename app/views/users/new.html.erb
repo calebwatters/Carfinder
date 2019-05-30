@@ -1,8 +1,8 @@
 <div class="topnav">
    <a style="font-family: impact;"> CarFinder</a>
-  <a  href="../car_posts">Home</a>
+    <%=link_to "Home", car_posts_path%>
   <a class="active" href="new">Sign In</a>
-   <a href="../car_posts/new">New Listing</a>
+    <%=link_to "New Listing", new_car_post_path%>
         <%if current_user != nil%>
   <a><%=link_to current_user.name, user_path(current_user)%></a>
   <%else%>

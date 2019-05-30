@@ -1,14 +1,16 @@
 <div class="topnav">
       <a style="font-family: impact;"> CarFinder</a>
-    <a  href="../car_posts">Home</a>
-    <a href="../car_posts/new">New Listing</a>
-    <%if logged_in? %>
+    <%=link_to "Home", car_posts_path%>
+    <%=link_to "New Listing", new_car_post_path%>
+   <%if logged_in? %>
         <div class="dropdown">
-            <button class="dropbtn"><%=link_to current_user.name.titleize, user_path(current_user)%>
+            <button class="dropbtn"><a><%= current_user.name.titleize %></a>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
+                <%= link_to "Profile", user_path(current_user) %>
                 <%= link_to "Log Out", logout_path, method: :delete %>
+                <%= link_to "Settings", edit_user_path(current_user) %>
             </div>
         </div>
     <%else%>
@@ -73,3 +75,4 @@
 <% end %>
 </div>
 </div>
+
