@@ -62,7 +62,7 @@ h1 {
 
 /* Dropdown container - needed to position the dropdown content */
 .dropdown {
-  float: right;
+  float: left;
   
   
 }
