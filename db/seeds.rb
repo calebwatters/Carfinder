@@ -13,4 +13,3 @@ MakeModel.destroy_all
     mileage: Faker::Vehicle.mileage
     )
 end
-
