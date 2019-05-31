@@ -15,7 +15,7 @@ h1 {
   content: "";
   display: table;
   clear: both;
- 
+  z-index: 2;
 
 }
 
@@ -99,7 +99,7 @@ h1 {
   display: block;
   min-width: 175px;
   max-width: 175px;
-
+z-index: 1;
 }
 
 /* Add a grey background to dropdown links on hover */
@@ -236,7 +236,6 @@ body, html {
 }
 .form {
   position: relative;
-  z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 25px;
@@ -336,6 +335,7 @@ body, html {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
+  
 }
 
 .signup-body {
@@ -367,7 +367,6 @@ body, html {
 
 .car-form {
   position: relative;
-  z-index: 1;
   background: #FFFFFF;
   max-width: 800px;
   margin: 0 auto 100px;
