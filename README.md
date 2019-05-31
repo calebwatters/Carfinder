@@ -42,15 +42,15 @@ CarFinder is an application for anyone who is interested in listing a vehicle an
 
 - Sign-Up Page
 
-[Sign Up](https://i.imgur.com/IYyc3m9.png)
+![Sign Up](https://i.imgur.com/IYyc3m9.png)
 
 - Home Page
 
-[Home Page](https://i.imgur.com/kTVUq3N.png)
+![Home Page](https://i.imgur.com/kTVUq3N.png)
 
 - A New Listing
 
-[Listing](https://i.imgur.com/LRUmcaz.png)
+![Listing](https://i.imgur.com/LRUmcaz.png)
 
 
 ## Credits
