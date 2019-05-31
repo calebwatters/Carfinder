@@ -2,16 +2,18 @@
 
 CarFinder is an application for anyone who is interested in listing a vehicle and seeing what other users have to say about it. Using a ruby on rails framework, the application has a sign in function that is both secure, and easy to use. Once logged in, a user can create a listing for their vehicle and watch as other users leave reviews on their listed vehicle. This application also utilizes a search function where any user, logged in or not, can search through listed vehicles and read the reviews on those vehicles. Users that are not logged in can view vehicles, but cannot create a listing or leave a content. Also, a user can edit/delete a listing as well as be able to edit/delete their account information.
 
+## Installation
 
-Some example project ideas from previous classes:
-
-1. [Regifter](http://regifter.herokuapp.com/) - A gift trading app that lets users upload images and descriptions of unwanted gifts and propose trades with other users.
-1. [Flatiron Postcard](http://flatironpostcard.herokuapp.com/) - An app that lets you create and send custom postcards to friends and family
-1. Petster - A social media site for pets
-1. [ROBYStuff - Rent or Buy Your Stuff](https://stark-falls-90133.herokuapp.com/listings)
-1. [Planning Ahead - Plan Your Funeral](https://ancient-mesa-18771.herokuapp.com/users/summary)
-1. [JOBuddy - Assistance with Job Applications](https://sheltered-woodland-79144.herokuapp.com/)
-
+1.) Make sure to install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your system.
+2.) Fork and Clone the Github [Repository](https://github.com/calebwatters/rails-project-mode-seattle-web-career-042219) into a folder on your computer
+3.) Change your directory using `cd` until you reach the folder called `rails-project-mode-seattle-web-career-042219`
+4.) Once the folder is opened inside your text editor, run `bundle install`
+5.) Make sure to install ImageMagick `brew install imagemagick`
+6.) Run `rake db:migrate` to migrate all the tables
+7.) Run `rake db:seed` to seed all the data
+8.) Open the application using `rails s`
+9.) In your browser, go to the link provided to you by the rails server, in the image highlighted in red.
+![Alt Text](localhost.png)
 
 ## Requirements:
 
