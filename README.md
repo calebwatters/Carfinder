@@ -1,6 +1,6 @@
-# Rails Project Mode
+# CarFinder
 
-Congratulations, we are starting project mode! This means that you'll spend the rest of the week working in a team to build out a Rails project of your choice. There will be some lectures and new material scheduled throughout the week, but the bulk of the time will be working on your projects.
+CarFinder is an application for anyone who is interested in listing a vehicle and seeing what other users have to say about it. Using a ruby on rails framework, the application has a sign in function that is both secure, and easy to use. Once logged in, a user can create a listing for their vehicle and watch as other users leave reviews on their listed vehicle. This application also utilizes a search function where any user, logged in or not, can search through listed vehicles and read the reviews on those vehicles. Users that are not logged in can view vehicles, but cannot create a listing or leave a content. Also, a user can edit/delete a listing as well as be able to edit/delete their account information.
 
 
 Some example project ideas from previous classes:
