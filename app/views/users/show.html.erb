@@ -18,49 +18,45 @@
 
 
 <div class="user-info">
-
-
-<h2><%= @user.name %></h2>
- <ul> 
-                <li>Email: <%= @user.email %></li></ul>
-<br>
-<br>
-<br>
+    <h2><%= @user.name %></h2>
+        <ul> 
+            <li>Email: <%= @user.email %></li></ul>
+        <br>
+        <br>
+        <br>
 
 </div>
+
 <div class='user-cars'>
-<h2>Cars For Sale: </h2>
-            <%@user.car_posts.each do |cp|%>
+    <h2>Cars For Sale: </h2>
+    <%@user.car_posts.each do |cp|%>
 
-<div class="column index_obj" >
+    <div class="column index_obj" >
         <%= link_to car_post_path(cp) do %>
-
-    <div class="index_img row">
-    <p>
-    <h1><%=cp.title%></h1>
-    <center><%=image_tag cp.photo.thumb.url %></center>
-    </p>
+    
+        <div class="index_img row">
+        <p>
+            <h1><%=cp.title%></h1>
+            <center><%=image_tag cp.photo.thumb.url %></center>
+        </p>
+        </div>
+        <div class="row">
+            <%= link_to edit_car_post_path(cp) do %>
+            <div class="column edit">
+                Edit
+            </div>
+            <%end%>
+            <%=link_to cp, method: :delete, data: {confirm: "Are You Sure?"} do%>
+            <div class="column delete">
+                Delete
+            </div>
+            <%end%>
     </div>
-    <div class="row">
-    <%= link_to edit_car_post_path(cp) do %>
 
-        <div class="column edit">
-            Edit
-        </div>
-   
+</div>
     <%end%>
-    <%=link_to cp, method: :delete, data: {confirm: "Are You Sure?"} do%>
-        <div class="column delete">
-            Delete
-        </div>
-        <%end%>
-</div>
-
-</div>
-<% end %>
-<%end%>
-        </section>
-    </aside>
+    <%end%>
+ 
 </div>
 
 </div>

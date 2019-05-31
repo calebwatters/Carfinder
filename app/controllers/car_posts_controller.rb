@@ -37,7 +37,6 @@ class CarPostsController < ApplicationController
     end
 
     def destroy
-        byebug
         @car_post.destroy
         redirect_to car_posts_path
     end
