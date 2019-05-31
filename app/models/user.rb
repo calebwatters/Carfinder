@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :reviews
-  has_many :car_posts
+  has_many :reviews, dependent: :destroy
+  has_many :car_posts, dependent: :destroy
 
   attr_accessor :remember_token
   before_save { self.email = email.downcase }

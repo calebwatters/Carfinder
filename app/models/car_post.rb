@@ -1,7 +1,7 @@
 class CarPost < ApplicationRecord
-    has_many :car_makes
+    has_many :car_makes, dependent: :destroy
     has_many :make_models, through: :car_makes
-    has_many :reviews
+    has_many :reviews, dependent: :destroy
     belongs_to :user
     accepts_nested_attributes_for :make_models
     mount_uploader :photo, PhotoUploader

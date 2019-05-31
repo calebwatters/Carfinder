@@ -1,5 +1,5 @@
 class CarPostsController < ApplicationController
-    before_action :set_car, only: [:show, :edit, :update]
+    before_action :set_car, only: [:show, :edit, :update, :destroy]
 
     def index
         @car_posts = CarPost.search(params[:search])
@@ -37,6 +37,9 @@ class CarPostsController < ApplicationController
     end
 
     def destroy
+        byebug
+        @car_post.destroy
+        redirect_to car_posts_path
     end
 
     private

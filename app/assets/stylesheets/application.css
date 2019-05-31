@@ -605,7 +605,7 @@ th, td {
 .edit {
     z-index: 1;
   background: rgb(88, 164, 214);
-  max-width: 1000px;
+  max-width: 175px;
   height: 10px;
   margin: 10px auto 0px;
   padding: 10px;
@@ -623,4 +623,15 @@ th, td {
 
 .contact {
   text-align: left;
+}
+
+.delete {
+    z-index: 1;
+  background: rgb(209, 89, 73);
+  max-width: 175px;
+  height: 10px;
+  margin: 10px auto 0px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
