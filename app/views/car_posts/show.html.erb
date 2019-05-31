@@ -21,46 +21,70 @@
 <br><br><br>
 
 <h1><%=@car_post.title%></h1>
+
 <div  class="show_img" >
-  <%= image_tag @car_post.photo.thumb.url %>
-
+    <%= image_tag @car_post.photo.thumb.url %>
 </div>
 
-<%if logged_in?%>
-<%=render 'comment'%>
-<%end%>
-<div class='gen-info'>
-<h3>General Info:</h3>
-    <%=@car_post.content%></p>
-    <table  style="attr_table">
-        <thead>
-            <th>Make/Model</th>
-            <th>Year</th>
-            <th>Color</th>
-            <th>Mileage</th>
-            <th>Type</th>
+<div class="row">
 
-        </thead>
-        <tbody>
-    <%@car_post.make_models.each do |m| %>
-        <td><%=m.make_model%></td>
-         <td><%=m.year%></td>
-         <td><%=m.color%></td>
-       <td><%=m.mileage%></td>
-        <td> <%=m.style%></td>
+    <div class ="comment column">
+            <h3>Reviews: </h3>
+            <table  style=" border: .5px solid; border-radius: 3px;" width="500">
+                <% @car_post.reviews.each do |comment| %>
+                <thead>
+                    <th><%= comment.user.name %></th>
+                </thead>
+                <tbody>
+                    <td><%= comment.content %></td>
+                </tbody>
+                <% end %>
 
-    
-    <%end%>
-    </table>
-    <div class="contact">
-    <h3>Contact Info</h3>
-    <ul>
-    <li><%="Name: " + @car_post.user.name%></li>
-    <li><%="Email: " + @car_post.user.email%></li>
-    </ul>
+            </table>
+    <br>
+            <%if logged_in?%>
+            <%=render 'comment'%>
+            <%end%>
     </div>
-    <br>
-    <br>
-    <br>
+
+
+
+
+    <div class='gen-info column'>
+        <h3>General Info:</h3>
+        <%=@car_post.content%></p>
+        <table  style="attr_table">
+            <thead>
+                <th>Make/Model</th>
+                <th>Year</th>
+                <th>Color</th>
+                <th>Mileage</th>
+                <th>Type</th>
+
+            </thead>
+            <tbody>
+                <%@car_post.make_models.each do |m| %>
+                <td><%=m.make_model%></td>
+                <td><%=m.year%></td>
+                <td><%=m.color%></td>
+                <td><%=m.mileage%></td>
+                <td> <%=m.style%></td>
+                <%end%>
+            </tbody>
+                
+        </table>
+  
+        <div class="contact">
+            <h3>Contact Info</h3>
+            <ul>
+                <li><%="Name: " + @car_post.user.name%></li>
+                <li><%="Email: " + @car_post.user.email%></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <br>
 </div>
+</div>
+
 
