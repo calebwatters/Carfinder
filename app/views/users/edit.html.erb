@@ -43,6 +43,13 @@
       <%= f.password_field :password_confirmation %><br><br>
 
       <%= f.submit "Save Changes", class: "btn btn-primary" %>
+      <br>
+      <br>
+
+    
     <% end %>
+      <% if current_user?(@user) %>
+        <%= button_to "Delete Profile", @user, method: :delete, data: { confirm: "You sure?"} %>
+      <% end %>
   </div>
 </div>
