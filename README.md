@@ -53,6 +53,12 @@ CarFinder is an application for anyone who is interested in listing a vehicle an
 ![Listing](https://i.imgur.com/LRUmcaz.png)
 
 
+
+- A drawn out depiction of our Models and their relationships to other models.
+
+![Models](https://i.imgur.com/SUZgEyv.png)
+
+
 ## Credits
 
 CarFinder was an application that was developed by the creative minds of [Vadim Stakhnyuk](https://github.com/VadimS4) and [Caleb Watters](https://github.com/calebwatters)
