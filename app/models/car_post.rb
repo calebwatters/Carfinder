@@ -15,7 +15,7 @@ class CarPost < ApplicationRecord
 
      def self.search(search)
         if search
-            attr = CarPost.where("title LIKE ?", "%#{search}%")
+            attr = CarPost.where("title ILIKE ?", "%#{search}%")
             if attr
                 self.where(id: attr)
             else 
